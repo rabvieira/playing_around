@@ -10,15 +10,17 @@ import com.example.demo.Greeting;
 
 @Controller
 public class Writing {
+	private Experimento ex = new Experimento();
 	
 	@RequestMapping("/")
 	public @ResponseBody String index(){
-		return "mnist.html";
+		return "trainers.html";
 	}
 	
 	@PostMapping("/page")
-    public String greetingSubmit(@ModelAttribute Greeting greeting) {
+    public String greetingSubmit(@ModelAttribute Greeting greeting) throws Exception {
     	System.err.println(greeting.getLri());
+    	//ex.run_experiment();
         return "mnist.html";
     }
 	
